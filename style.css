@@ -1,0 +1,22 @@
+.container{
+    text-align: center;
+    width: 100%;
+}
+
+.number{
+    width:125px;
+    height: 125px;
+    margin:16px;
+}
+
+.card{
+    width: 100%;
+}
+
+#plabod{
+    margin-top: 16px;
+}
+
+#opbod{
+    margin-top: 16px;
+}

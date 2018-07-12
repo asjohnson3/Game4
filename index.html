@@ -10,7 +10,7 @@
         <!-- Link to Bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <!-- Link to my CSS -->
-        <!-- <link rel="stylesheet" href="style.css" -->
+        <link rel="stylesheet" href="style.css"
     </head>
     <body>
 
@@ -30,23 +30,34 @@
         <div class="container">
 
             <div class="row">
+                <div id="player" class="col-lg-6">
+                    <div class="card">
+                        <h2 class="card-header" >1</h2>
+                        <p id = "plabod"></p>
+                    </div>
+                </div>
 
-            <div id="player" class="col-lg-6">
-                <div class="card">
-                <h2 class="card-header" >1</h2>
-                <p id = "plabod"></p>
-
+                <div id="opponents" class = "col-lg-6" >
+                    <div class="card">
+                        <h2 id = "opponents" class="card-header">2</h2>
+                        <p id = "opbod"></p>
+                    </div>
                 </div>
             </div>
-            <div id="opponents" class = "col-lg-6" >
-                <div class="card">
-                <h2 id = "opponents" class="card-header">2</h2>
-                <p id = "opbod"></p>
-                
-                </div>
+
+            <br>
+
+            <div class="row">
+                <div class = "col-lg-12">
+                    <div class="card">
+                        <h2 id = "buttons" class="card-header">Buttons</h2> 
+                        <p class = "body"></p>   
+                    </div>
+                </div>    
             </div>
-            </div>
+
         </div>
+
         <script src="java.js"></script>
     </body>
   </html>
