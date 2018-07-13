@@ -1,3 +1,42 @@
+var play = 0;
+console.log(play);
+var opp = 0;
+var empty = true;
+
+$(".number").on("click", function() {
+
+    if (empty) {
+        $(this).appendTo("#plabod");
+        empty = false;
+        play = this.value
+        console.log(play);
+        console.log(this.dataValue);
+    }else{
+        $(this).appendTo("#opbod");
+        opp = this.value;
+        console.log(opp);
+    }
+
+});
+
+
+$(".attack").on("click", function() {
+    if(opp === 0){
+        alert("Win");
+    }else{
+        opp-=play;
+        console.log(opp);
+    }
+        
+
+})
+
+$(document).ready(function () {
+    if ('#plabod:empty') {
+        console.log("Empty");
+    }
+});
+
 // var wins = 0;
 // var loss = 0;
 
@@ -17,16 +56,9 @@
 // $("#startNumber").text(rand);
 
 
-$(".number").on("click", function() {
-    var choice = this;
-
     // rand-= $(this).val();
     // console.log(rand, $(this).val());
     // $("#startNumber").text(rand);
-    $(".number").appendTo("#opbod");
-    $(this).appendTo("#plabod");
-    console.log(this.value);
- 
     // if(rand === 0){
     //     alert("Winner")
     //     wins ++;
@@ -64,4 +96,3 @@ $(".number").on("click", function() {
     //     console.log(cry4);
     //     $("#button-4").val(cry4);
     // }
-});
