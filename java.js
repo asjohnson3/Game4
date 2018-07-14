@@ -1,33 +1,56 @@
-var play = 0;
-console.log(play);
-var opp = 0;
+var playHealth = 0;
+var playAttack = 0;
+var playCounter = 0;
+
+var oppHealth = 0;
+var oppAttack = 0;
+var oppCounter = 0
 var empty = true;
+var counter = 0;
 
 $(".number").on("click", function() {
 
     if (empty) {
         $(this).appendTo("#plabod");
         empty = false;
-        play = this.value
-        console.log(play);
-        console.log(this.dataValue);
+
+        playHealth = this.getAttribute("health");
+        console.log(playHealth)
+        playAttack = this.getAttribute("attack");
+        console.log(playAttack);
+        playCounter = this.getAttribute("counterA");
+        console.log(playCounter)
+
     }else{
         $(this).appendTo("#opbod");
-        opp = this.value;
-        console.log(opp);
+        oppHealth = this.getAttribute("health");
+        console.log(oppHealth)
+        oppAttack = this.getAttribute("attack");
+        console.log(oppAttack);
+        oppCounter = this.getAttribute("counterA");
+        console.log(oppCounter)
     }
 
 });
 
-
 $(".attack").on("click", function() {
-    if(opp === 0){
-        alert("Win");
+    
+    if(oppHealth > 0){
+        oppHealth-=playAttack;
+        console.log(oppHealth);
     }else{
-        opp-=play;
-        console.log(opp);
-    }
         
+    }
+    if(oppHealth <= 0){
+        alert("Winner");
+        $("#opbod").empty();
+        counter++;
+    }  
+    
+    if(counter === 3){
+        $("#opbod").text("Champion");
+
+    }
 
 })
 
@@ -36,63 +59,3 @@ $(document).ready(function () {
         console.log("Empty");
     }
 });
-
-// var wins = 0;
-// var loss = 0;
-
-// var cry1 = Math.floor(Math.random()*12)+1;
-// console.log(cry1);
-// $("#button-1").val(cry1);
-// var cry2 = Math.floor(Math.random()*12)+1;
-// console.log(cry2);
-// $("#button-2").val(cry2);
-// var cry3 = Math.floor(Math.random()*12)+1;
-// console.log(cry3);
-// $("#button-3").val(cry3);
-// var cry4 = Math.floor(Math.random()*12)+1;
-// console.log(cry4);
-// $("#button-4").val(cry4);
-// var rand = Math.floor(Math.random() * (120-19+1))+19;
-// $("#startNumber").text(rand);
-
-
-    // rand-= $(this).val();
-    // console.log(rand, $(this).val());
-    // $("#startNumber").text(rand);
-    // if(rand === 0){
-    //     alert("Winner")
-    //     wins ++;
-    //     $(".win").text("Wins = "+ wins);
-    //     rand = Math.floor(Math.random() * (120-19+1))+19;
-    //     $("#startNumber").text(rand);
-    //     cry1 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry1);
-    //     $("#button-1").val(cry1);
-    //     cry2 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry2);
-    //     $("#button-2").val(cry2);
-    //     cry3 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry3);
-    //     $("#button-3").val(cry3);
-    //     cry4 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry4);
-    //     $("#button-4").val(cry4);
-    // }else if(rand < 0){
-    //     alert("Loser");
-    //     loss ++;
-    //     $(".losses").text("Losses = "+ loss);
-    //     rand = Math.floor(Math.random() * (120-19+1))+19;
-    //     $("#startNumber").text(rand);
-    //     cry1 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry1);
-    //     $("#button-1").val(cry1);
-    //     cry2 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry2);
-    //     $("#button-2").val(cry2);
-    //     cry3 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry3);
-    //     $("#button-3").val(cry3);
-    //     cry4 = Math.floor(Math.random()*12)+1;
-    //     console.log(cry4);
-    //     $("#button-4").val(cry4);
-    // }
