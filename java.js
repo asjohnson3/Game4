@@ -20,6 +20,7 @@ $(".number").on("click", function() {
         console.log(playAttack);
         playCounter = this.getAttribute("counterA");
         console.log(playCounter)
+        $("#stats").html("Health: " + playHealth + '<br>' + "Attack: " + playAttack + '<br>' + "Counter Attack: " + playCounter)
 
     }else{
         $(this).appendTo("#opbod");
@@ -35,12 +36,17 @@ $(".number").on("click", function() {
 
 $(".attack").on("click", function() {
     
-    if(oppHealth > 0){
+    if(oppHealth > 0 && playHealth >= 0){
         oppHealth-=playAttack;
+        playHealth -=oppCounter;
         console.log(oppHealth);
-    }else{
-        
+        $("#stats").html("Health: " + playHealth + '<br>' + "Attack: " + playAttack + '<br>' + "Counter Attack: " + playCounter)
     }
+
+    if (playHealth<=0){
+        alert("Loser");
+    }
+        
     if(oppHealth <= 0){
         alert("Winner");
         $("#opbod").empty();
@@ -49,7 +55,6 @@ $(".attack").on("click", function() {
     
     if(counter === 3){
         $("#opbod").text("Champion");
-
     }
 
 })
