@@ -20,7 +20,7 @@ $(".number").on("click", function() {
         console.log(playAttack);
         playCounter = this.getAttribute("counterA");
         console.log(playCounter)
-        $("#stats").html("Health: " + playHealth + '<br>' + "Attack: " + playAttack + '<br>' + "Counter Attack: " + playCounter)
+        $("#playerstats").html("Health: " + playHealth + '<br>' + "Attack: " + playAttack + '<br>' + "Counter Attack: " + playCounter);
 
     }else{
         $(this).appendTo("#opbod");
@@ -30,6 +30,7 @@ $(".number").on("click", function() {
         console.log(oppAttack);
         oppCounter = this.getAttribute("counterA");
         console.log(oppCounter)
+        $("#oppstats").html("Health: " + oppHealth + '<br>' + "Attack: " + oppAttack + '<br>' + "Counter Attack: " + oppCounter);
     }
 
 });
@@ -40,7 +41,8 @@ $(".attack").on("click", function() {
         oppHealth-=playAttack;
         playHealth -=oppCounter;
         console.log(oppHealth);
-        $("#stats").html("Health: " + playHealth + '<br>' + "Attack: " + playAttack + '<br>' + "Counter Attack: " + playCounter)
+        $("#playerstats").html("Health: " + playHealth + '<br>' + "Attack: " + playAttack + '<br>' + "Counter Attack: " + playCounter);
+        $("#oppstats").html("Health: " + oppHealth + '<br>' + "Attack: " + oppAttack + '<br>' + "Counter Attack: " + oppCounter);
     }
 
     if (playHealth<=0){
