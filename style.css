@@ -28,3 +28,39 @@
 .jumbotron{
     padding:0;
 }
+
+.btn{
+    height: 100px;
+}
+
+#button-1{
+    background-image: url("http://www.pokestadium.com/sprites/xy/charmander.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    height: 100px;
+}
+
+#button-2 {
+    background-image: url("http://www.pokestadium.com/sprites/xy/squirtle.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    height: 100px;
+}
+
+#button-3 {
+    background-image: url("http://www.pokestadium.com/sprites/xy/bulbasaur.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    height: 100px;
+}
+
+#button-4 {
+    background-image: url("http://www.pokestadium.com/sprites/xy/pikachu.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    height: 100px;
+}
